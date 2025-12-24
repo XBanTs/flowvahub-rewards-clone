@@ -1,0 +1,8 @@
+*Supabase credentials:
+-Project Name: Flowvahub Rewards
+-Database password: vIDBPmUs5CfF8ddw
+
+-Project URL: https://bemvgnfujknlkzxkltlw.supabase.co
+
+-anon public key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJlbXZnbmZ1amtubGt6eGtsdGx3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY1NjkzNjMsImV4cCI6MjA4MjE0NTM2M30.SfeIXSlOzxRf7TqTkX8EOuXCBIkY6vSJI3eVYBN4Ro4
+
