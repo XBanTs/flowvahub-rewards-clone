@@ -9,22 +9,25 @@ A modern, full-featured rewards management platform built with React, TypeScript
 
 ## 🌐 Live Demo
 
-**[View Live Application](#)** *(URL to be added)*
+**[View Live Application](https://flowvahub-rewards-clone.vercel.app/)** *(https://flowvahub-rewards-clone.vercel.app/)*
 
 ## ✨ Features
 
 ### User Authentication
+
 - **Secure Sign-Up & Sign-In**: Email-based authentication powered by Supabase Auth
 - **Session Persistence**: Automatic session management with token refresh
 - **Sign-Out Functionality**: Secure logout with session cleanup
 
 ### Rewards Management
+
 - **Browse Rewards**: View all active rewards in a responsive grid layout
 - **Real-Time Points Balance**: Display current user points with live updates
 - **Reward Details**: Each reward shows title, description, point cost, and category
 - **Stock Tracking**: Visual indicators for reward availability and remaining stock
 
 ### Reward Claiming
+
 - **Claim Confirmation Modal**: Verify reward claims before processing
 - **Status Indicators**: 
   - ✓ Claimed - Already claimed rewards
@@ -35,6 +38,7 @@ A modern, full-featured rewards management platform built with React, TypeScript
 - **Real-Time Updates**: Automatic refresh of rewards and points after claiming
 
 ### User Experience
+
 - **Loading States**: Smooth loading spinners during data fetching
 - **Error Handling**: Comprehensive error messages with retry functionality
 - **Empty States**: Friendly messaging when no rewards are available
@@ -44,6 +48,7 @@ A modern, full-featured rewards management platform built with React, TypeScript
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 19.2.0** - UI library with latest features
 - **TypeScript 5.9.3** - Type-safe development
 - **Vite 7.2.4** - Lightning-fast build tool and dev server
@@ -52,6 +57,7 @@ A modern, full-featured rewards management platform built with React, TypeScript
 - **Autoprefixer 10.4.23** - Vendor prefix automation
 
 ### Backend & Database
+
 - **Supabase** - Open-source Firebase alternative
   - PostgreSQL database
   - Real-time subscriptions
@@ -59,6 +65,7 @@ A modern, full-featured rewards management platform built with React, TypeScript
   - RPC functions for reward claiming
 
 ### Development Tools
+
 - **ESLint 9.39.1** - Code quality and consistency
 - **TypeScript ESLint 8.46.4** - TypeScript-specific linting
 - **React Hooks ESLint Plugin** - React best practices enforcement
@@ -95,6 +102,7 @@ flowvahub-rewards/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 16.x or higher
 - npm or yarn package manager
 - Supabase account with configured project
@@ -102,54 +110,68 @@ flowvahub-rewards/
 ### Installation
 
 1. **Clone the repository**
+   
    ```bash
    git clone <repository-url>
    cd flowvahub-rewards
    ```
 
 2. **Install dependencies**
+   
    ```bash
    npm install
    ```
 
 3. **Configure environment variables**
+   
    - Copy `.env.example` to `.env.local`
    - Add your Supabase credentials:
+     
      ```env
      VITE_SUPABASE_URL=your_supabase_url_here
      VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
      ```
 
 4. **Start the development server**
+   
    ```bash
    npm run dev
    ```
+   
    The application will be available at `http://localhost:5173`
 
 ## 📦 Available Scripts
 
 ### Development
+
 ```bash
 npm run dev
 ```
+
 Starts the Vite development server with hot module replacement (HMR).
 
 ### Build
+
 ```bash
 npm run build
 ```
+
 Compiles TypeScript and builds the application for production.
 
 ### Preview
+
 ```bash
 npm run preview
 ```
+
 Previews the production build locally.
 
 ### Linting
+
 ```bash
 npm run lint
 ```
+
 Runs ESLint to check code quality and consistency.
 
 ## 🏗️ Architecture
@@ -171,19 +193,27 @@ App
 ### Custom Hooks
 
 #### `useAuth()`
+
 Manages user authentication state and session persistence.
+
 - Returns: `{ user, loading, isAuthenticated, signOut }`
 
 #### `useUserProfile(userId)`
+
 Fetches and subscribes to user profile updates in real-time.
+
 - Returns: `{ profile, loading, error }`
 
 #### `useRewards(userId)`
+
 Fetches rewards with claim status and subscribes to updates.
+
 - Returns: `{ rewards, loading, error, refetch }`
 
 #### `useClaimReward()`
+
 Handles reward claiming via Supabase RPC function.
+
 - Returns: `{ claimReward, loading, error }`
 
 ### Data Types
@@ -215,11 +245,13 @@ type ClaimStatus = 'available' | 'claimed' | 'insufficient_points' | 'unavailabl
 ### Tables Required
 
 #### `user_profiles`
+
 - `id` (UUID, Primary Key)
 - `points_balance` (Integer)
 - `display_name` (Text, nullable)
 
 #### `rewards`
+
 - `id` (UUID, Primary Key)
 - `title` (Text)
 - `description` (Text)
@@ -231,6 +263,7 @@ type ClaimStatus = 'available' | 'claimed' | 'insufficient_points' | 'unavailabl
 - `display_order` (Integer)
 
 #### `reward_claims`
+
 - `id` (UUID, Primary Key)
 - `user_id` (UUID, Foreign Key)
 - `reward_id` (UUID, Foreign Key)
@@ -239,9 +272,11 @@ type ClaimStatus = 'available' | 'claimed' | 'insufficient_points' | 'unavailabl
 ### RPC Function
 
 #### `claim_reward(reward_uuid UUID)`
+
 Handles the reward claiming logic with validation and point deduction.
 
 **Response:**
+
 ```typescript
 {
   success: boolean;
@@ -261,6 +296,7 @@ The application uses **Tailwind CSS** for styling with a modern, professional de
 - **Animations**: Smooth transitions and loading spinners
 
 ### Key Tailwind Features Used
+
 - Gradient backgrounds
 - Backdrop blur effects
 - Shadow utilities
@@ -309,11 +345,13 @@ The application is fully responsive across all device sizes:
 ## 📚 Dependencies
 
 ### Production
+
 - `@supabase/supabase-js` - Supabase client library
 - `react` - UI library
 - `react-dom` - React DOM rendering
 
 ### Development
+
 - `@vitejs/plugin-react` - Vite React plugin
 - `tailwindcss` - CSS framework
 - `typescript` - Type checking
@@ -337,21 +375,25 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Troubleshooting
 
 ### Tailwind CSS not working
+
 - Ensure `postcss.config.js` is properly configured
 - Restart the development server after configuration changes
 - Clear the `.vite` cache if styles don't update
 
 ### Supabase connection errors
+
 - Verify environment variables in `.env.local`
 - Check Supabase project is active and accessible
 - Ensure database tables and RPC functions are created
 
 ### Authentication issues
+
 - Clear browser cookies and local storage
 - Verify Supabase Auth configuration
 - Check email/password requirements (minimum 6 characters)
 
 ### Rewards not loading
+
 - Verify database tables have data
 - Check user has proper permissions in Supabase
 - Review browser console for detailed error messages
